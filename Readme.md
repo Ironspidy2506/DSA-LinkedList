@@ -5,14 +5,14 @@ Welcome to the **Linked List in Java** repository! 🎉 This project demonstrate
 
 ## 📚 Table of Contents
 
-- [🔍 Introduction](#introduction)
-- [🔗 Singly Linked List](#singly-linked-list)
-  - [🛠️ Operations](#singly-linked-list-operations)
-- [🔗 Doubly Linked List](#doubly-linked-list)
-  - [🛠️ Operations](#doubly-linked-list-operations)
-- [🌱 Easy](#🌱easy])
-- [🌿 Medium](#🌿medium)
-- [🌳 Hard](#🌳hard)
+- 🔍 [Introduction](#introduction)
+- 🔗 [Singly Linked List](#singly-linked-list)
+  - 🛠️ [Operations](#singly-linked-list-operations)
+- 🔗 [Doubly Linked List](#doubly-linked-list)
+  - 🛠️ [Operations](#doubly-linked-list-operations)
+- 🌱 [Easy](#🌱easy])
+- 🌿 [Medium](#🌿medium)
+- 🌳 [Hard](#🌳hard)
 
 ---
 
