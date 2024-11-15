@@ -15,7 +15,7 @@ class Node {
     }
 }
 
-public class Single_LinkedList {
+public class SingleLinkedList {
     static Node head = null;
 
     // Insert at the beginning

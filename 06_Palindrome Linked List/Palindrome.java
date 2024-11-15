@@ -48,6 +48,10 @@ public class Palindrome {
     }
 
     public static Node reverseLinkedList(Node head) {
+        if (head == null) {
+            return null;
+        }
+
         Node prev = null;
         Node curr = head;
 
@@ -62,6 +66,10 @@ public class Palindrome {
     }
 
     public static boolean compareLinkedList(Node first, Node second) {
+        if (first == null || second == null) {
+            return false;
+        }
+
         int size = sizeLL(first);
         for (int i = 0; i < size; i++) {
             if (first.data != second.data) {

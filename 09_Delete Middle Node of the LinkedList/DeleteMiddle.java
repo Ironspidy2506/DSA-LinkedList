@@ -18,7 +18,7 @@ class Node {
     }
 }
 
-public class AddOne {
+public class DeleteMiddle {
     static Node head = null;
 
     public static void insertAtLast(int val) {
@@ -47,52 +47,28 @@ public class AddOne {
         return count;
     }
 
-    public static Node reverseLinkedList(Node head) {
+    public static Node deleteMiddleNode(Node head) {
         if (head == null || head.next == null) {
             return null;
         }
 
-        Node prev = null;
+        int size = sizeLL(head);
+        int middle = (size - 1) / 2;
+        if (middle == 0) {
+            return head.next;
+        }
+
         Node curr = head;
+        Node prev = null;
 
-        while (curr != null) {
-            Node nextNode = curr.next;
-            curr.next = prev;
+        for (int i = 0; i < middle; i++) {
             prev = curr;
-            curr = nextNode;
+            curr = curr.next;
         }
 
-        return prev;
-    }
+        prev.next = curr.next;
 
-    public static Node addOnetoLL(Node head) {
-        if (head == null) {
-            return null;
-        }
-
-        Node p = reverseLinkedList(head);
-        Node dummyNode = new Node(-1);
-        Node dummyHead = dummyNode;
-
-        int carry = 1;
-        while (carry == 1) {
-            int sum = carry + p.data;
-            carry = sum / 10;
-            Node newNode = new Node(sum % 10);
-            dummyNode.next = newNode;
-            dummyNode = dummyNode.next;
-
-            p = p.next;
-        }
-
-        while (p != null) {
-            Node newNode = new Node(p.data);
-            dummyNode.next = newNode;
-            dummyNode = dummyNode.next;
-            p = p.next;
-        }
-
-        return reverseLinkedList(dummyHead.next);
+        return head;
     }
 
     public static void printLinkedList(Node head) {
@@ -107,7 +83,7 @@ public class AddOne {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Enter the elements of the first LinkedList (Press -1 to stop):");
+        System.out.println("Enter the elements of the LinkedList (Press -1 to stop):");
         while (sc.hasNext()) {
             int n = sc.nextInt();
             if (n == -1)
@@ -118,8 +94,8 @@ public class AddOne {
         System.out.println("Original LinkedList:");
         printLinkedList(head);
 
-        Node result = addOnetoLL(head);
-        System.out.println("LinkedList after adding 1 to it:");
+        Node result = deleteMiddleNode(head);
+        System.out.println("LinkedList After Deleting the Middle Element:");
         printLinkedList(result);
 
         sc.close();

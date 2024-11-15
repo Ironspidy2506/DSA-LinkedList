@@ -4,9 +4,17 @@ class Node {
     int data;
     Node next;
 
+    public Node() {
+    }
+
     public Node(int data) {
         this.data = data;
         this.next = null;
+    }
+
+    public Node(int data, Node next) {
+        this.data = data;
+        this.next = next;
     }
 }
 
@@ -28,6 +36,10 @@ public class OddEven {
     }
 
     public static Node segregateOddEven(Node head) {
+        if (head == null) {
+            return null;
+        }
+
         Node dummyOdd = new Node(-1);
         Node dummyOddHead = dummyOdd;
         Node dummyEven = new Node(-1);

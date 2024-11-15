@@ -18,7 +18,7 @@ class Node {
     }
 }
 
-public class RemoveFromEnd {
+public class Middle {
     static Node head = null;
 
     public static void insertAtLast(int val) {
@@ -35,37 +35,20 @@ public class RemoveFromEnd {
         temp.next = newNode;
     }
 
-    public static int sizeLL(Node head) {
-        int count = 0;
-        Node temp = head;
-
-        while (temp != null) {
-            count++;
-            temp = temp.next;
+    public static int findMiddle(Node head) {
+        if (head == null || head.next == null) {
+            return 0;
         }
 
-        return count;
-    }
+        Node slow = head;
+        Node fast = head;
 
-    public static Node removeNthNode(Node head, int n) {
-        if (head == null) {
-            return null;
+        while (fast.next != null && fast.next.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
         }
 
-        int size = sizeLL(head);
-        if (n > size) {
-            System.out.println("This can't be done!!");
-            return null;
-        }
-
-        Node temp = head;
-        for (int i = 1; i < size - n; i++) {
-            temp = temp.next;
-        }
-
-        temp.next = temp.next.next;
-
-        return head;
+        return slow.data;
     }
 
     public static void printLinkedList(Node head) {
@@ -88,15 +71,11 @@ public class RemoveFromEnd {
             insertAtLast(n);
         }
 
-        System.out.print("Enter the Nth position to remove from the end: ");
-        int n = sc.nextInt();
-
         System.out.println("Original LinkedList:");
         printLinkedList(head);
 
-        Node result = removeNthNode(head, n);
-        System.out.println("Result LinkedList after addition:");
-        printLinkedList(result);
+        int result = findMiddle(head);
+        System.out.print("Middle Element of LinkedList is: " + result);
 
         sc.close();
     }

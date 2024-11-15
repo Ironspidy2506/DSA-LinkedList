@@ -36,6 +36,10 @@ public class Reverse {
     }
 
     public static Node reverseLinkedList(Node head) {
+        if (head == null) {
+            return null;
+        }
+
         Node prev = null;
         Node curr = head;
 
@@ -69,7 +73,7 @@ public class Reverse {
             }
             insertAtLast(n);
         }
-        
+
         System.out.println("Original LinkedList:");
         printLinkedList(head);
 
